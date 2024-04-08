@@ -6,8 +6,8 @@ import warnings
 
 
 
-s = 6 # 101
-f = 5 # 101
+s = 122 # 101
+f = 12 # 101
 
 first = ""
 second = ""
@@ -300,11 +300,15 @@ else:
             print('Number:',k)
         
         else:
-
+            ls1 = []
             if len3[0] == '0':
+                for i in len3:
+                    if i == '1':
+                        break
+                    ls1.append(i)
                 h = list(counts)
                 g = str(int(h[0]))
-                for i in range(len(list2)):
+                for i in range(len(ls1)):
                     g=g+'0'
                 
                 k = int(g,2)
