@@ -6,8 +6,8 @@ import warnings
 
 
 
-s = 11 # 100
-f = 1 # 11
+s = 6 # 101
+f = 5 # 101
 
 first = ""
 second = ""
@@ -41,8 +41,12 @@ print()
 # for i in range()
 
 list3=[]
+# for i in range(len(list1)):
 for i in list1:
     x=s<<i
+    print()
+    print("xxxxxxxxxxxxxxxxxxxxx:",x,i)
+    print()
     list3.append(x)
     x=0
 
@@ -51,16 +55,26 @@ print("List 3: ",list3)
 print()
 
 
+qc=0
 counts=0
-
+# list3.sort(reverse=True)
+print()
+print(list3)
+print()
 if list3 == []:
     pass   
 
 
 else:
+    print()
+    print('elseeeeeeeeeeeeeeeeeeeeeeeeeeeeeee')
+    print()
     for i in range(len(list3)):
 
         if (i+1) > len(list3) or len(list3) == 1:
+            print()
+            print('qccccccccccccccccccccccccc')
+            print()
             break
 
         if i==0:
@@ -101,10 +115,6 @@ else:
 
 
 
-
-
-
-
             for i in range(n-1):
                 qc.ccx(a[i], b[i], c[i+1])
                 qc.cx(a[i], b[i])
@@ -112,17 +122,9 @@ else:
 
 
 
-
-
-
             qc.ccx(a[n-1], b[n-1], b[n])
             qc.cx(a[n-1], b[n-1])
             qc.ccx(c[n-1], b[n-1], b[n])
-
-
-
-
-
 
 
 
@@ -186,7 +188,6 @@ else:
 
 
 
-
             #Setting up the registers using the values inputted
             for i in range(l):
                 if first[i] == "1":
@@ -194,10 +195,6 @@ else:
             for i in range(l2):
                 if second[i] == "1":
                     qc.x(b[l2 - (i+1)]) #Flip the qubit from 0 to 1
-
-
-
-
 
 
 
@@ -209,15 +206,9 @@ else:
 
 
 
-
-
             qc.ccx(a[n-1], b[n-1], b[n])
             qc.cx(a[n-1], b[n-1])
             qc.ccx(c[n-1], b[n-1], b[n])
-
-
-
-
 
 
 
@@ -252,32 +243,15 @@ else:
             h = list(counts)
             second = str(int(h[0]))
 
-    
 
 
+len3 = bin(f).replace("0b", "")
+len3 = len3[::-1]
+print()
+print(len3)
+print()
 
 
-
-
-
-
-
-
-#Measure qubits and store results in classical register cl
-# for i in range(n+1):
-#     qc.measure(b[i], cl[i])
-
-
-
-# #Set chosen backend and execute job
-
-# backend = qiskit_aer.Aer.get_backend('qasm_simulator')
-# job_simulator = execute(qc,backend,shots=2)
-
-
-
-# result_simulator = job_simulator.result()
-# counts = result_simulator.get_counts(qc)
 
 if bin(f).replace("0b", "") == '1':
     print()
@@ -315,12 +289,30 @@ else:
         print(counts)
         print()
         
-        
-        v = bin(list3[0]).replace("0b", "")
-        for i in range(len(list2)):
-            v=v+'0'
-        print(v)
+        if counts == 0:
+            v = bin(list3[0]).replace("0b", "")
+            for i in range(len(list2)):
+                v=v+'0'
+            print(list2)
 
-        k = int(v,2)
-        print('Binary:',v)
-        print('Number:',k)
+            k = int(v,2)
+            print('Binary:',v)
+            print('Number:',k)
+        
+        else:
+
+            if len3[0] == '0':
+                h = list(counts)
+                g = str(int(h[0]))
+                for i in range(len(list2)):
+                    g=g+'0'
+                
+                k = int(g,2)
+                print('Binary:',g)
+                print('Number:',k)
+            else:
+                h = list(counts)
+                g = str(int(h[0]))
+                k = int(g,2)
+                print('Binary:',g)
+                print('Number:',k)
