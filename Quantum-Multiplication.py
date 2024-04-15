@@ -5,20 +5,26 @@ import qiskit_aer
 import warnings
 
 
+n1 = 12 # 101 122
+n2 = 10 # 101 12
 
-s = 122 # 101
-f = 12 # 101
+s = 0
+f = 0
+
+if n1>= n2:
+    s=n1
+    f=n2
+else:
+    s=n2
+    f=n1
 
 first = ""
 second = ""
 
-if s >= f:
-    first = bin(s).replace("0b", "")
-    second = bin(f).replace("0b", "")
 
-else:
-    first = bin(f).replace("0b", "")
-    second = bin(s).replace("0b", "")
+first = bin(s).replace("0b", "")
+second = bin(f).replace("0b", "")
+
 
 print()
 print("first and second",first,second)
