@@ -5,8 +5,8 @@ import qiskit_aer
 import warnings
 
 
-n1 = 100 # 101 122
-n2 = 3 # 101 12
+n1 = 22 # 101 122
+n2 = 5 # 101 12
 
 s = 0
 f = 0
@@ -30,13 +30,13 @@ print()
 print("first and second",first_num,second_num)
 print()
 
-length_diff = len(first_num) - len(second_num)
+# length_diff = len(first_num) - len(second_num)
 
-print()
-print('length difference:', length_diff)
-print()
+# print()
+# print('length difference:', length_diff)
+# print()
 
-starting_point = length_diff * 2
+# starting_point = length_diff * 2
 
 
 
@@ -53,7 +53,8 @@ first = second_num # 11
 
 
 while answer <= s:
-
+    if n2 == 0 or n1 == 0:
+        break
     quotient = quotient +1
 
     second = second_num # 13
@@ -175,8 +176,13 @@ while answer <= s:
     # print('Binary:',g)
     # print('Number:',k)
 
-
-
-print('quotient: ', quotient)
-print('reminder: ', reminder)
+if n2 == 0 and n1 != 0:
+    print("Answer will be not defined, you cannot divide it by 0.")
+    print()
+elif n2 == 0 or n1 == 0:
+    print('quotient: ', 0)
+    print('reminder: ', 0)
+else:
+    print('quotient: ', quotient)
+    print('reminder: ', reminder)
 # print('quotient: ', quotient)
